@@ -1,9 +1,10 @@
 import React from 'react';
+import './Card.css';
 
 export const CardList = (props) => {
-  console.log(props);
-
   return (
-    <div>{props.children}</div>
+    <div className="card-container">
+      <h1>{props.people.name}</h1>
+    </div>
   )
 }

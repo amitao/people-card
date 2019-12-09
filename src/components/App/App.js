@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import { CardList } from '../Card/Card-list';
+import {Card} from '../Card/Card';
 import './App.css';
 
 class App extends Component {
@@ -20,14 +20,8 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-      <Header />
-        {this.state.peoples.map( people => {
-          return (
-            <h1 key={people.id}>{people.name}</h1>
-          )
-         })
-        }
-        <CardList name="hehe"><h1>Amie</h1></CardList>
+        <Header />
+        <Card peoples={this.state.peoples} />
       </div>
     )
   }

@@ -13,7 +13,7 @@ class App extends Component {
     // fetch the API url and returns a Promise
     fetch('https://jsonplaceholder.typicode.com/users')
     .then( response => response.json())  // returns a json object
-    .then( users => this.setState({peoples: users})) // set people in the array
+    .then( users => this.setState({peoples: users})) // display users in the people array
   }
 
   render() {

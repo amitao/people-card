@@ -19,6 +19,10 @@ class App extends Component {
     .then( users => this.setState({peoples: users})) // display users in the people array
   }
 
+  handleChange(e) {
+    this.setState({searchField: e.target.value});
+  }
+
   render() {
     return(
       <div className="App">
@@ -27,7 +31,7 @@ class App extends Component {
         <input 
           type="search" 
           placeholder="search" 
-          onChange={ e => this.setState({searchField: e.target.value})} 
+          onChange={this.handleChange} 
         />
         <Card peoples={this.state.peoples} />
       </div>

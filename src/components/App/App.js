@@ -24,6 +24,16 @@ class App extends Component {
   }
 
   render() {
+
+    // desturcturing
+    // const peoples = this.state.peoples
+    const {peoples, searchField} = this.state;
+    
+    // fltered names when search
+    const filteredPeoples = peoples.filter(people => {
+      people.name.toLowerCase().includes(searchField.toLowerCase())
+    });
+
     return(
       <div className="App">
         <Header />
@@ -33,7 +43,7 @@ class App extends Component {
           placeholder="search" 
           onChange={this.handleChange} 
         />
-        <Card peoples={this.state.peoples} />
+        <Card peoples={filteredPeoples} />
       </div>
     )
   }

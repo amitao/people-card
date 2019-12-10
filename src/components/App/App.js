@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-import {Card} from '../Card/Card';
+import { Card } from '../Card/Card';
+import { Search } from '../Search/Search';
 import './App.css';
 
 class App extends Component {
 
   state = {
-    peoples: []
+    peoples: [],
+    searchField: ''
   }
 
 
@@ -21,6 +23,12 @@ class App extends Component {
     return(
       <div className="App">
         <Header />
+        <Search />        
+        <input 
+          type="search" 
+          placeholder="search" 
+          onChange={ e => this.setState({searchField: e.target.value})} 
+        />
         <Card peoples={this.state.peoples} />
       </div>
     )

@@ -6,6 +6,7 @@ export const CardList = (props) => {
     <div className="card-container">
     <img src="https://picsum.photos/id/1/200/300" alt="image"/>
       <h1>{props.people.name}</h1>
+      <p>{props.people.email}</p>
     </div>
   )
 }

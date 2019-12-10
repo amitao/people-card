@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { Card } from '../Card/Card';
-import { Search } from '../Search/Search';
+
 import './App.css';
 
 class App extends Component {
@@ -9,6 +9,10 @@ class App extends Component {
   state = {
     peoples: [],
     searchField: ''
+  }
+
+  handleChange = (event) => {
+    this.setState({searchField: event.target.value});
   }
 
 
@@ -19,28 +23,26 @@ class App extends Component {
     .then( users => this.setState({peoples: users})) // display users in the people array
   }
 
-  handleChange(e) {
-    this.setState({searchField: e.target.value});
-  }
 
   render() {
 
     // desturcturing
     // const peoples = this.state.peoples
     const {peoples, searchField} = this.state;
-    
+
     // fltered names when search
-    const filteredPeoples = peoples.filter(people => {
+    const filteredPeoples = peoples.filter( people => 
       people.name.toLowerCase().includes(searchField.toLowerCase())
-    });
+    );
 
     return(
       <div className="App">
         <Header />
-        <Search />        
+      
         <input 
           type="search" 
           placeholder="search" 
+          value={this.state.searchField}
           onChange={this.handleChange} 
         />
         <Card peoples={filteredPeoples} />

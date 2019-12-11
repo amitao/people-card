@@ -1,10 +1,17 @@
 import React from 'react';
 import './Search.css';
 
-export const Search = props => {
+// functional component - get props and return html
+export const Search = ({ placeholder, handleChange, value}) => {
   return (
-    <div className="search-box">
-
+    <div>
+      <input
+        className="search-box"
+        type="search"
+        placeholder={placeholder}
+        value={value}
+        onChange={handleChange}
+      />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import { Card } from '../Card/Card';
 
 import './App.css';
+import { Search } from '../Search/Search';
 
 class App extends Component {
 
@@ -38,13 +39,11 @@ class App extends Component {
     return(
       <div className="App">
         <Header />
-        <input 
-          type="search" 
-          placeholder="search" 
-          value={this.state.searchField}
-          onChange={this.handleChange} 
+        <Search 
+          placeholder="search people"
+          value={searchField}
+          handleChange={this.handleChange}
         />
-
         <Card peoples={filteredPeoples} />
       </div>
     )

@@ -38,13 +38,13 @@ class App extends Component {
     return(
       <div className="App">
         <Header />
-      
         <input 
           type="search" 
           placeholder="search" 
           value={this.state.searchField}
           onChange={this.handleChange} 
         />
+
         <Card peoples={filteredPeoples} />
       </div>
     )

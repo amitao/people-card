@@ -3,7 +3,7 @@ import './Search.css';
 
 export const Search = props => {
   return (
-    <div>
+    <div className="search-box">
 
     </div>
   )

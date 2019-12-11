@@ -41,7 +41,6 @@ class App extends Component {
         <Header />
         <Search 
           placeholder="search people"
-          value={searchField}
           handleChange={this.handleChange}
         />
         <Card peoples={filteredPeoples} />
